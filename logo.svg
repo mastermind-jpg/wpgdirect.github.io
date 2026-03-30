@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 400" width="1400" height="400">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&amp;display=swap');
+    </style>
+  </defs>
+  
+  <g transform="translate(155, 200)">
+    <path d="M-100,0 L-100,-130 L-15,-130 C57,-130 108,-80 108,0 C108,80 57,130 -15,130 L-100,130 Z" fill="#1A3A5C"/>
+    <path d="M-42,-58 L30,0 L-42,58" fill="none" stroke="#FFFFFF" stroke-width="19" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <text x="310" y="175" font-family="'Montserrat', 'Helvetica Neue', sans-serif" font-size="108" font-weight="700" fill="#1A3A5C" letter-spacing="6">WPG</text>
+  <text x="316" y="268" font-family="'Montserrat', 'Helvetica Neue', sans-serif" font-size="56" font-weight="500" fill="#C8561E" letter-spacing="26">DIRECT</text>
+</svg>
