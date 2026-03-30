@@ -133,6 +133,18 @@ nav { position: fixed; top: 0; width: 100%; z-index: 100; background: rgba(255,2
 .contact-item a:hover { text-decoration: underline; }
 .payment-methods { text-align: center; margin-top: 24px; font-size: 12px; color: var(--gray-light); font-weight: 500; letter-spacing: 0.3px; }
 
+/* CONTACT FORM */
+.quote-form { max-width: 480px; margin: 36px auto 0; background: var(--warm-bg); border-radius: 12px; padding: 32px; border: 1px solid var(--border); }
+.quote-form h3 { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 16px; text-align: center; }
+.form-row { margin-bottom: 14px; }
+.form-row label { display: block; font-size: 12px; font-weight: 600; color: var(--gray); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+.form-row input, .form-row textarea { width: 100%; padding: 10px 14px; border: 1.5px solid rgba(26,58,92,0.15); border-radius: 6px; font-family: 'Montserrat', sans-serif; font-size: 14px; color: var(--dark); background: var(--white); transition: border-color 0.2s; }
+.form-row input:focus, .form-row textarea:focus { outline: none; border-color: var(--copper); }
+.form-row textarea { resize: vertical; min-height: 80px; }
+.form-submit { width: 100%; padding: 12px; background: var(--copper); color: var(--white); border: none; border-radius: 8px; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.2s; letter-spacing: 0.3px; }
+.form-submit:hover { background: var(--copper-dark); }
+.form-note { text-align: center; margin-top: 10px; font-size: 11px; color: var(--gray-light); }
+
 /* FOOTER */
 footer { background: var(--navy-dark); color: rgba(255,255,255,0.4); padding: 36px 24px; text-align: center; font-size: 12px; }
 footer .footer-links { margin-top: 10px; }
@@ -175,7 +187,7 @@ footer .footer-links a:hover { color: var(--white); }
       <a href="#services">Services</a>
       <a href="#why">Why Us</a>
       <a href="#contact">Contact</a>
-      <a href="/cdn-cgi/l/email-protection#fb92959d94bb8c8b9c9f92899e988fd5989a" class="nav-cta">Get a Free Quote</a>
+      <a href="#quote" class="nav-cta">Get a Free Quote</a>
     </div>
     <button class="nav-hamburger" onclick="document.querySelector('.nav-mobile').classList.toggle('open')" aria-label="Menu">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -185,7 +197,7 @@ footer .footer-links a:hover { color: var(--white); }
       <a href="#services" onclick="this.parentElement.classList.remove('open')">Services</a>
       <a href="#why" onclick="this.parentElement.classList.remove('open')">Why Us</a>
       <a href="#contact" onclick="this.parentElement.classList.remove('open')">Contact</a>
-      <a href="/cdn-cgi/l/email-protection#3d54535b527d4a4d5a59544f585e49135e5c">Get a Free Quote</a>
+      <a href="#quote" onclick="this.parentElement.classList.remove('open')">Get a Free Quote</a>
     </div>
   </div>
 </nav>
@@ -194,7 +206,7 @@ footer .footer-links a:hover { color: var(--white); }
   <h1>Better products, <em>better prices</em> — delivered to Winnipeg.</h1>
   <p>We source products directly from manufacturers overseas and deliver them to your home or business. Skip the retail markup.</p>
   <div class="hero-buttons">
-    <a href="/cdn-cgi/l/email-protection#d7beb9b1b897a0a7b0b3bea5b2b4a3f9b4b6" class="btn-primary">Get a Free Quote</a>
+    <a href="#quote" class="btn-primary">Get a Free Quote</a>
     <a href="#how" class="btn-secondary">How It Works</a>
   </div>
   <div class="hero-trust">
@@ -297,7 +309,7 @@ footer .footer-links a:hover { color: var(--white); }
 <section class="cta-section">
   <h2>Curious how much you could save?</h2>
   <p>Get a free, no-obligation quote. Tell us what you need and we'll get back to you within 24 hours.</p>
-  <a href="/cdn-cgi/l/email-protection#3851565e57784f485f5c514a5d5b4c165b59" class="btn-primary">Get a Free Quote</a>
+  <a href="#quote" class="btn-primary">Get a Free Quote</a>
 </section>
 
 <section class="section" id="contact">
@@ -309,7 +321,7 @@ footer .footer-links a:hover { color: var(--white); }
   <div class="contact-grid">
     <div class="contact-item">
       <h3>Email</h3>
-      <p><a href="/cdn-cgi/l/email-protection#aac3c4ccc5eadddacdcec3d8cfc9de84c9cb"><span class="__cf_email__" data-cfemail="fe97909891be898e999a978c9b9d8ad09d9f">[email&#160;protected]</span></a></p>
+      <p><a href="mailto:info&#64;wpgdirect.ca">info&#64;wpgdirect.ca</a></p>
     </div>
     <div class="contact-item">
       <h3>Phone</h3>
@@ -325,6 +337,30 @@ footer .footer-links a:hover { color: var(--white); }
     </div>
   </div>
   <div class="payment-methods">We accept: e-Transfer &#183; Cash &#183; Credit / Debit Card</div>
+
+  <div class="quote-form" id="quote">
+    <h3>Request a Free Quote</h3>
+    <form action="https://formspree.io/f/xqegqzlw" method="POST">
+      <div class="form-row">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required placeholder="John Smith">
+      </div>
+      <div class="form-row">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required placeholder="john@example.com">
+      </div>
+      <div class="form-row">
+        <label for="phone">Phone (optional)</label>
+        <input type="tel" id="phone" name="phone" placeholder="(204) xxx-xxxx">
+      </div>
+      <div class="form-row">
+        <label for="message">What are you looking for?</label>
+        <textarea id="message" name="message" required placeholder="Describe the product you need — type, quantity, any details. We'll get back to you within 24 hours."></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send Quote Request</button>
+    </form>
+    <p class="form-note">We typically respond within 24 hours.</p>
+  </div>
 </section>
 
 <footer>
@@ -339,4 +375,13 @@ footer .footer-links a:hover { color: var(--white); }
     </svg>
   </div>
   <p>10261321 Manitoba Ltd. &mdash; Winnipeg, Manitoba, Canada</p>
-  <p style="mar
+  <p style="margin-top:3px;">Registered Manitoba Corporation</p>
+  <div class="footer-links">
+    <a href="mailto:info&#64;wpgdirect.ca">Email Us</a>
+    <a href="#" target="_blank">Facebook</a>
+  </div>
+  <p style="margin-top:12px;">&copy; 2026 WPG Direct. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
